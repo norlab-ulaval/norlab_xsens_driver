@@ -12,16 +12,16 @@
     <arg name="orientation_covariance_diagonal" default="[0.01745, 0.01745, 0.15708]"/>
 
     <!-- node -->
-	<node pkg="xsens_driver" exec="mtnode.py" name="xsens_driver" output="screen" >
-		<param name="device" value="$(var device)"/>
-		<param name="baudrate" value="$(var baudrate)"/>
-		<param name="timeout" value="$(var timeout)"/>
-		<param name="initial_wait" value="$(var initial_wait)"/>
-		<param name="frame_id" value="$(var frame_id)"/>
-		<param name="frame_local" value="$(var frame_local)"/>
-		<param name="no_rotation_duration" value="$(var no_rotation_duration)"/>
-		<param name="angular_velocity_covariance_diagonal" value="$(var angular_velocity_covariance_diagonal)"/>
-		<param name="linear_acceleration_covariance_diagonal" value="$(var linear_acceleration_covariance_diagonal)"/>
-		<param name="orientation_covariance_diagonal" value="$(var orientation_covariance_diagonal)"/>
-	</node>
+    <node pkg="xsens_driver" exec="mtnode.py" name="xsens_driver" output="screen" >
+        <param name="device" value="$(var device)"/>
+        <param name="baudrate" value="$(var baudrate)"/>
+        <param name="timeout" value="$(var timeout)"/>
+        <param name="initial_wait" value="$(var initial_wait)"/>
+        <param name="frame_id" value="$(var frame_id)"/>
+        <param name="frame_local" value="$(var frame_local)"/>
+        <param name="no_rotation_duration" value="$(var no_rotation_duration)"/>
+        <param name="angular_velocity_covariance_diagonal" value="$(var angular_velocity_covariance_diagonal)"/>
+        <param name="linear_acceleration_covariance_diagonal" value="$(var linear_acceleration_covariance_diagonal)"/>
+        <param name="orientation_covariance_diagonal" value="$(var orientation_covariance_diagonal)"/>
+    </node>
 </launch>

@@ -1,6 +1,4 @@
-ROS 2 driver for XSens MT/MTi/MTi-G devices.
-
-See: http://ros.org/wiki/ethzasl_xsens_driver
+ROS 2 driver for XSens MT/MTi/MTi-G devices. It is based on the ROS 1 driver made by Francis Colas (see https://github.com/ethz-asl/ethzasl_xsens_driver).
 
 ** Some useful commands to enable serial communication
 

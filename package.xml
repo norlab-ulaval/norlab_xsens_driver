@@ -4,7 +4,7 @@
   <name>xsens_driver</name>
   <version>3.0.0</version>
   <description>ROS 2 driver for XSens MT/MTi/MTi-G devices.</description>
-  <maintainer email="francis.colas@mavt.ethz.ch">Francis Colas</maintainer>
+  <maintainer email="simon-pierre.deschenes.1@ulaval.ca">Simon-Pierre Deschênes</maintainer>
   <license>BSD</license>
 
   <depend>rclpy</depend>

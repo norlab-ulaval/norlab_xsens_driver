@@ -15,8 +15,8 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='Francis Colas',
-    maintainer_email='francis.colas@mavt.ethz.ch',
+    maintainer='Simon-Pierre Deschênes',
+    maintainer_email='simon-pierre.deschenes.1@ulaval.ca',
     description='ROS 2 driver for XSens MT/MTi/MTi-G devices.',
     license='BSD',
     entry_points={
