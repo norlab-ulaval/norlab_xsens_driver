@@ -457,7 +457,7 @@ class XSensDriver(rclpy.node.Node):
 
         def fill_from_Pressure(o):
             """Fill messages with information from 'Pressure' MTData2 block."""
-            self.press_msg.fluid_pressure = o['Pressure']
+            self.press_msg.fluid_pressure = float(o['Pressure'])
             self.pub_press = True
 
         def fill_from_Acceleration(o):
