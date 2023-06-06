@@ -442,7 +442,9 @@ class XSensDriver(rclpy.node.Node):
                 a, b, c, d, e, f, g, h, i = o['a'], o['b'], o['c'], o['d'],\
                     o['e'], o['f'], o['g'], o['h'], o['i']
                 m = identity_matrix()
-                m[:3, :3] = ((a, b, c), (d, e, f), (g, h, i))
+                m[:3, :3] = ((a, d, g),
+                             (b, e, h),
+                             (c, f, i))
                 x, y, z, w = quaternion_from_matrix(m)
             except KeyError:
                 pass
@@ -455,7 +457,7 @@ class XSensDriver(rclpy.node.Node):
 
         def fill_from_Pressure(o):
             """Fill messages with information from 'Pressure' MTData2 block."""
-            self.press_msg.fluid_pressure = o['Pressure']
+            self.press_msg.fluid_pressure = float(o['Pressure'])
             self.pub_press = True
 
         def fill_from_Acceleration(o):
