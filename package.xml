@@ -12,7 +12,7 @@
   <depend>sensor_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>diagnostic_msgs</depend>
-  <depend>python-serial</depend>
+  <exec_depend>python3-serial</exec_depend>
   <depend>tf_transformations</depend>
 
   <export>
