@@ -4,6 +4,7 @@ ROS 2 driver for XSens MT/MTi/MTi-G devices. It is based on the ROS 1 driver mad
 
 ```
 sudo adduser $USER dialout
+newgrp dialout
 ```
 
 where `$USER` is the username.
