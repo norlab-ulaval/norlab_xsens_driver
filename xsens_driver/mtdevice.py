@@ -1153,7 +1153,7 @@ class MTDevice(object):
             # TODO at that point data should be empty
         except struct.error as e:
             raise MTException("could not parse MTData message.")
-        if data != '':
+        if len(data) != 0 :
             raise MTException("could not parse MTData message (too long).")
         return output
 

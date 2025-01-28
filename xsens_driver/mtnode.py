@@ -381,7 +381,7 @@ class XSensDriver(rclpy.node.Node):
 
         def fill_from_Sample(ts):
             """Catch 'Sample' MTData blocks."""
-            self.h.seq = ts
+            # self.h.seq = ts
 
         # MTData2
         def fill_from_Temperature(o):
