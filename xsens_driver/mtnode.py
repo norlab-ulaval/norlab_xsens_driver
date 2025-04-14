@@ -28,6 +28,7 @@ class XSensDriver(rclpy.node.Node):
         baudrate = self.get_param('baudrate', 0)
         timeout = self.get_param('timeout', 0.002)
         initial_wait = self.get_param('initial_wait', 0.1)
+        self.enable_diagnostics = self.get_param('enable_diagnostics', True)
         if device == 'auto':
             devs = mtdevice.find_devices(timeout=timeout, initial_wait=initial_wait)
             if devs:
@@ -744,7 +745,7 @@ class XSensDriver(rclpy.node.Node):
             if self.ecef_pub is None:
                 self.ecef_pub = self.create_publisher(PointStamped, 'ecef', 10)
             self.ecef_pub.publish(self.ecef_msg)
-        if self.pub_diag:
+        if self.pub_diag and self.enable_diagnostics:
             self.diag_msg.header = self.h
             if self.diag_pub is None:
                 self.diag_pub = self.create_publisher(DiagnosticArray, '/diagnostics', 10)

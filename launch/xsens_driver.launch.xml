@@ -1,6 +1,7 @@
 <launch>
     <!-- parameters -->
     <arg name="device" default="auto"/>
+    <arg name="enable_diagnostics" default="True"/>
     <arg name="baudrate" default="0"/>
     <arg name="timeout" default="0.002"/>
     <arg name="initial_wait" default="0.1"/>
@@ -14,6 +15,7 @@
     <!-- node -->
     <node pkg="xsens_driver" exec="mtnode.py" name="xsens_driver" output="screen" >
         <param name="device" value="$(var device)"/>
+        <param name="enable_diagnostics" value="$(var enable_diagnostics)" type="bool"/>
         <param name="baudrate" value="$(var baudrate)"/>
         <param name="timeout" value="$(var timeout)"/>
         <param name="initial_wait" value="$(var initial_wait)"/>
