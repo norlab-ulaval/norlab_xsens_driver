@@ -17,6 +17,24 @@ import calendar
 import serial
 
 from math import radians, sqrt, atan2
+
+# Compatibility shim for ROS Jazzy images that ship NumPy >= 2.0 with the
+# Ubuntu transforms3d package still expecting the removed np.maximum_sctype.
+import numpy as np
+if not hasattr(np, "maximum_sctype"):
+    def _maximum_sctype(dtype):
+        dtype = np.dtype(dtype)
+        if np.issubdtype(dtype, np.complexfloating):
+            return np.complex128
+        if np.issubdtype(dtype, np.floating):
+            return np.float64
+        if np.issubdtype(dtype, np.signedinteger):
+            return np.int64
+        if np.issubdtype(dtype, np.unsignedinteger):
+            return np.uint64
+        return dtype.type
+    np.maximum_sctype = _maximum_sctype
+
 # transform Euler angles or matrix into quaternions
 from tf_transformations import quaternion_from_matrix, quaternion_from_euler, identity_matrix
 
